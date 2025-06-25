@@ -118,7 +118,7 @@ footer {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
 }
 
@@ -127,12 +127,27 @@ footer {
   height: 340px;
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-  /* border-radius: 12px 12px 0 0; */
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.hero-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.6), transparent 60%);
+  z-index: 0;
+}
+
+.hero-card .rank,
+.hero-card .rank-label,
+.hero-card .hero-name {
+  z-index: 1;
+  position: relative;
 }
 
 .hero-card:hover {
@@ -176,6 +191,18 @@ footer {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ─── Page-specific tweaks ───────────────── */
