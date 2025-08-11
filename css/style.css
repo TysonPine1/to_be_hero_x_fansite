@@ -11,6 +11,7 @@
   object-fit: cover;
 }
 
+img{ max-width:100%; height:auto; display:block; }
 
 
 /* Character */
@@ -48,4 +49,118 @@ body.dark.staff-page {
   color:#d35400; 
 }
 
-/*Character Modal */
+/* MENU BUTTON */
+.menu-btn{
+  position:fixed;
+  top:18px;            /* tweak for mobile if needed */
+  left:18px;
+  width:64px;
+  height:64px;
+  background:#000;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  cursor:pointer;
+  z-index:2000;
+  transition:background .3s;
+  font-family:system-ui,sans-serif;
+}
+
+.menu-btn .icon{
+  width:28px; height:16px;
+  position:relative;
+}
+
+.menu-btn .icon span{
+  position:absolute;
+  width:100%; height:3px;
+  background:#fff;
+  left:0;
+  transition:transform .35s;
+}
+
+.menu-btn .icon span:first-child{ top:0; }
+.menu-btn .icon span:last-child { bottom:0; }
+
+.menu-btn .label{
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  pointer-events:none;
+}
+
+.menu-btn.active{
+  background:#e9211e;           /* red */
+}
+
+.menu-button span {
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* OVERLAY */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1500;
+}
+
+.menu-overlay ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.menu-overlay li {
+  margin: 1.5rem 0;
+}
+
+.menu-overlay a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu-overlay a:hover {
+  color: #ff3c3c;
+}
+
+.menu-btn.active .icon span:first-child{
+  top:50%;
+  transform:translateY(-50%) rotate(45deg);
+}
+.menu-btn.active .icon span:last-child{
+  bottom:auto; top:50%;
+  transform:translateY(-50%) rotate(-45deg);
+}
+
+.menu-btn.active .label{ content:"CLOSE"; }
+.menu-btn.active .label::before{ content:"CLOSE"; }     /* simpler swap */
+.menu-btn:not(.active) .label::before{ content:"MENU"; }
+
+/* When active */
+.menu-overlay.show {
+  display: flex;
+}
+
+.menu-button.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+.menu-button.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-button.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}

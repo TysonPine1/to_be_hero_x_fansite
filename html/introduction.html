@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Introduction | TBHX-Style Site</title>
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/page.css"/>
@@ -9,7 +10,7 @@
 <body class="intro-page">
 
   <!-- NAVBAR -->
-  <nav>
+  <!-- <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="news.html">News</a></li>
@@ -17,7 +18,23 @@
       <li><a href="staff.html">Staff & Cast</a></li>
       <li><a href="character.html">Character</a></li>
     </ul>
-  </nav>
+  </nav> -->
+
+  <div id="menuButton" class="menu-button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div id="menuOverlay" class="menu-overlay">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="introduction.html">Introduction</a></li>
+      <li><a href="staff.html">Staff & Cast</a></li>
+      <li><a href="character.html">Character</a></li>
+    </ul>
+  </div>
 
   <!-- HERO -->
   <header class="hero">
@@ -45,6 +62,7 @@
   <div style="text-align:center;margin:2rem 0;">
     <button id="modeToggle">🌙 Toggle Dark Mode</button>
   </div>
-  <script src="../../js/script.js"></script>
+  <script src="../../js/core.js"></script>
+  <script src="../../js/character.js"></script>
 </body>
 </html>
